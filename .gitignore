@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# Environments / editors
+.vscode/
+.idea/
+
+# Results (generated)
+results/
+*.npy
+
+# Notebooks (optional)
+.ipynb_checkpoints/
