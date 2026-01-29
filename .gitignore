@@ -7,8 +7,11 @@ __pycache__/
 .idea/
 
 # Results (generated)
-results/
+# Track the results/ folder and its contents
+!results/
 *.npy
+# Allow .npy files inside results/
+!results/*.npy
 
 # Notebooks (optional)
 .ipynb_checkpoints/

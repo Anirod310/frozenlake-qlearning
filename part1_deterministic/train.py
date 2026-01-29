@@ -43,7 +43,7 @@ q_path = os.path.join(os.path.dirname(__file__), "results", "q_table.npy")
 metrics_path = os.path.join(os.path.dirname(__file__), "results", "metrics.json")
 np.save(q_path, Q)
 with open(metrics_path, 'w') as f:
-    json.dump({"NUM_EPISODES": NUM_EPISODES, "successes": int(successes), "success_rate": successes/NUM_EPISODES}, f)
+    json.dump({"env_id": "FrozenLake-v1", "is_slippery": False, "NUM_EPISODES": NUM_EPISODES, "successes": int(successes), "success_rate": successes/NUM_EPISODES}, f)
 print(f"Q table saved to {q_path}\n")
 print(f"Metrics saved to {metrics_path}")
 
