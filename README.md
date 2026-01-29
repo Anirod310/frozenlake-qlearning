@@ -1,4 +1,4 @@
-# Reiforcement Learning using Tabular Q-Learning on Frozen Lake
+# Reinforcement Learning using Tabular Q-Learning on Frozen Lake
 
 
 ![Frozen Lake](https://gymnasium.farama.org/_images/frozen_lake.gif)
