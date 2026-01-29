@@ -1,11 +1,16 @@
 # Reiforcement Learning using Tabular Q-Learning on Frozen Lake
 
-This project allowed me to learn the fundamentals of reiforcement learning, by implementing tabular Q-Learning on Frozen Lake(link of the environment below ), using gymnasium library.  
+This project allowed me to learn the fundamentals of reinforcement learning by implementing tabular Q-learning on the Frozen Lake environment (link below) using the Gymnasium library.
 
-The environnment is a 4x4 frozen lake grid, the agent starts at position [0, 0] and the goal is at the position [4,4]. Some tiles of the grid are "wholes".     
-In a first part, to achieve the goal, the agent must step tile by tile while avoiding wholes until he reaches the goal tile.    
-In a second part, the lake becomes slippery (argument **is_slippery = True** ) so the agent may moves perpendicular to the intented direction sometimes, and therefore has to take into account these new conditions in order to still reach the goal.      
-The 2 parts allowed me to illustrate and understand the differences between a deterministic and a stochastic environment.   
+The environment consists of a 4×4 frozen lake grid. The agent starts at position [0, 0], and the goal is located at position [3, 3]. Some tiles in the grid are holes. The project is separated in 2 parts :
+
+• In the first part, the agent must reach the goal by moving tile by tile while avoiding holes.
+
+• In the second part, the lake becomes slippery (argument **is_slippery = True**), meaning the agent may sometimes move perpendicular to the intended direction. As a result, the agent must take these new conditions into account in order to still reach the goal.
+
+These two parts allowed me to illustrate and understand the differences between a deterministic and a stochastic environment.   
+
+Feel free to take a look at the report, where I documented my progress on the project step by step. 
 
 ## Running the project 
 
