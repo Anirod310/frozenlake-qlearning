@@ -1,3 +1,5 @@
+import os
+import json
 import gymnasium as gym
 import numpy as np
 from config import NUM_EPISODES, MAX_TRAIN_STEPS, LEARNING_RATE, GAMMA, EPSILON  
@@ -33,8 +35,17 @@ for episode in range(NUM_EPISODES):
 
 train_env.close()
 
-print(f"Training with {NUM_EPISODES} episodes finished \n Successes during training : {successes} ({successes/NUM_EPISODES * 100:.2f} % success rate)\n Final Q table :")
-print(Q)
+print(f"Training with {NUM_EPISODES} episodes finished \n Successes during training : {successes} ({successes/NUM_EPISODES * 100:.2f} % success rate)\n\n Final Q table :")
+print(f"{Q}\n")
+
+# Save Q and metrics into results folder
+q_path = os.path.join(os.path.dirname(__file__), "results", "q_table.npy")
+metrics_path = os.path.join(os.path.dirname(__file__), "results", "metrics.json")
+np.save(q_path, Q)
+with open(metrics_path, 'w') as f:
+    json.dump({"NUM_EPISODES": NUM_EPISODES, "successes": int(successes), "success_rate": successes/NUM_EPISODES}, f)
+print(f"Q table saved to {q_path}\n")
+print(f"Metrics saved to {metrics_path}")
 
 
 

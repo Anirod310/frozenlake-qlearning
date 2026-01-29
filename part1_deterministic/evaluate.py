@@ -1,7 +1,8 @@
 import gymnasium as gym 
 import numpy as np
 from config import MAX_EVAL_STEPS
-from train import Q
+
+Q = np.load("results/q_table.npy")
 
 action_names = {0: "LEFT", 1: "DOWN", 2: "RIGHT", 3: "UP"}
 
@@ -15,8 +16,8 @@ total_reward = 0
 print("Path : ")
 
 while not done and step < MAX_EVAL_STEPS:
-    best_actions = np.flatnonzero(Q[state] == Q[state].max())
-    action = np.random.choice(best_actions)
+    best_actions = np.flatnonzero(Q[state] == Q[state].max()) # get all actions with max value
+    action = np.random.choice(best_actions) # randomly select one of the best actions
 
     next_state, reward, terminated, truncated, info = eval_env.step(action)
     done = terminated or truncated
