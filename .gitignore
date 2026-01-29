@@ -7,11 +7,11 @@ __pycache__/
 .idea/
 
 # Results (generated)
-# Track the results/ folder and its contents
-!results/
+# Ignore .npy files globally
 *.npy
-# Allow .npy files inside results/
-!results/*.npy
+# Allow .npy files in any results/ directory so outputs (like q_table.npy) can be tracked
+!**/results/
+!**/results/*.npy
 
 # Notebooks (optional)
 .ipynb_checkpoints/
