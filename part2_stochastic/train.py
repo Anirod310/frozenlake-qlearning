@@ -2,13 +2,14 @@ import os
 import json
 import gymnasium as gym
 import numpy as np
-from config import NUM_EPISODES, MAX_TRAIN_STEPS, LEARNING_RATE, GAMMA, EPSILON, IS_SLIPPERY, ENV_ID
+from config import NUM_EPISODES, MAX_TRAIN_STEPS, LEARNING_RATE, GAMMA, EPSILON, EPSILON_MIN, EPSILON_START, EPSILON_DECAY, IS_SLIPPERY, ENV_ID
 
 train_env = gym.make(ENV_ID, is_slippery=IS_SLIPPERY)
 
 Q = np.zeros((train_env.observation_space.n, train_env.action_space.n))
 
 successes = 0
+epsilon = EPSILON_START
 
 for episode in range(NUM_EPISODES):
 
@@ -17,7 +18,7 @@ for episode in range(NUM_EPISODES):
     done = False
 
     while not done and step < MAX_TRAIN_STEPS :
-        if np.random.uniform(0, 1) < EPSILON:
+        if np.random.uniform(0, 1) < epsilon:
             action = train_env.action_space.sample() # generate a random action for exploration
         else :
             best_actions = np.flatnonzero(Q[state] == Q[state].max()) # get all actions with max value
@@ -32,6 +33,8 @@ for episode in range(NUM_EPISODES):
 
         state = next_state
         step += 1
+        
+    epsilon = max(EPSILON_MIN, epsilon * EPSILON_DECAY)
     
 train_env.close()
 

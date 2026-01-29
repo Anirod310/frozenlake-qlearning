@@ -1,1 +1,1 @@
-{"env_id": "FrozenLake-v1", "is_slippery": true, "NUM_EPISODES": 50000, "successes": 19454, "success_rate": 0.38908}
+{"env_id": "FrozenLake-v1", "is_slippery": true, "NUM_EPISODES": 500000, "successes": 194575, "success_rate": 0.38915}
