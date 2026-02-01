@@ -15,7 +15,20 @@ These two parts allowed me to illustrate and understand the differences between 
 
 Feel free to take a look at the [report](report.md), where I documented my progress on the project step by step. 
 
-## Running the project 
+## Getting Started 
 
+Below are the steps you can follow to test and run the project yourself:
+
+- Clone the repository :
+    ```bash
+    git clone https://github.com/Anirod310frozenlake-qlearning.git
+    cd frozen-lake-rl
+    ```
+
+- This project relies on the Python libraries listed in the [requirements.txt](requirements.txt) file. Install all dependencies by running the following command in your environment:
+    ```bash
+    pip install -r requirements.txt
+    ```
+- For each part of the project, the **config.py** file contains the parameters used for training and evaluating the policy. Feel free to modify them (as I did) and observe how they affect the training and evaluation process.
 
 

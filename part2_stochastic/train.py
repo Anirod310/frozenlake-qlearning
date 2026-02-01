@@ -2,7 +2,7 @@ import os
 import json
 import gymnasium as gym
 import numpy as np
-from config import NUM_EPISODES, MAX_TRAIN_STEPS, LEARNING_RATE, GAMMA, EPSILON, EPSILON_MIN, EPSILON_START, EPSILON_DECAY, IS_SLIPPERY, ENV_ID
+from config import N_TRAIN_EPISODES, MAX_TRAIN_STEPS, LEARNING_RATE, GAMMA, EPSILON, EPSILON_MIN, EPSILON_START, EPSILON_DECAY, IS_SLIPPERY, ENV_ID
 
 train_env = gym.make(ENV_ID, is_slippery=IS_SLIPPERY)
 
@@ -11,7 +11,7 @@ Q = np.zeros((train_env.observation_space.n, train_env.action_space.n))
 successes = 0
 epsilon = EPSILON_START
 
-for episode in range(NUM_EPISODES):
+for episode in range(N_TRAIN_EPISODES):
 
     state, info = train_env.reset()
     step = 0
@@ -38,7 +38,7 @@ for episode in range(NUM_EPISODES):
     
 train_env.close()
 
-print(f"Training with {NUM_EPISODES} episodes finished \n Successes during training : {successes} ({successes/NUM_EPISODES * 100:.2f} % success rate)\n\n Final Q table :")
+print(f"Training with {N_TRAIN_EPISODES} episodes finished \n Successes during training : {successes} ({successes/N_TRAIN_EPISODES * 100:.2f} % success rate)\n\n Final Q table :")
 print(f"{Q}\n")
 
 # ensure results folder exists then save Q and metrics
@@ -51,7 +51,7 @@ metrics_path = os.path.join(results_dir, "metrics.json")
 try:
     np.save(q_path, Q)
     with open(metrics_path, 'w') as f:
-        json.dump({"env_id": ENV_ID, "is_slippery": IS_SLIPPERY, "NUM_EPISODES": NUM_EPISODES, "successes": int(successes), "success_rate": successes/NUM_EPISODES}, f)
+        json.dump({"env_id": ENV_ID, "is_slippery": IS_SLIPPERY, "N_TRAIN_EPISODES": N_TRAIN_EPISODES, "successes": int(successes), "success_rate": successes/N_TRAIN_EPISODES}, f)
     print(f"Q table saved to {q_path}\n")
     print(f"Metrics saved to {metrics_path}")
 except Exception as e:
