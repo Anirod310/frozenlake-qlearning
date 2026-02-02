@@ -31,4 +31,60 @@ Below are the steps you can follow to test and run the project yourself:
     ```
 - For each part of the project, the **config.py** file contains the parameters used for training and evaluating the policy. Feel free to modify them (as I did) and observe how they affect the training and evaluation process.
 
+## Project Structure
 
+The project is organized as follows:
+```bash
+.
+├── part1_deterministic/
+│   ├── env.py          # Frozen Lake environment (deterministic)
+│   ├── results/        # Store the results  
+│   │   ├── metrics.json # Parameters + results of training
+│   │   ├── q_table.npy  # Learned policy
+│   ├── train.py        # Training loop
+│   ├── evaluate.py     # Policy evaluation
+│   └── config.py       # Hyperparameters
+│
+├── part2_stochastic/
+│   ├── env.py          # Slippery Frozen Lake environment (stochastic)
+│   ├── results/
+│   │   ├── metrics.json
+│   │   ├── q_table.npy
+│   ├── train.py
+│   ├── evaluate.py
+│   └── config.py
+│
+├── report.md           # Detailed step-by-step report
+├── requirements.txt
+└── README.md
+```
+## Key Concepts learned 
+
+Through this project, I gained hand-on exeperience with : 
+
+- Markov Decision Processes
+- Tabular Q-learning and Bellman updates
+- Exploration vs Exploitation policy
+- Impact of stochastic transition on learning
+- Importance of the different hyperparameters
+
+## Limitation, Possible Improvements & Next Steps
+
+This project was really fun and instructive to understand the first concepts of RL, however I quickly felt the limitations of this algorithm :
+- Q-learning does not scale to large or continuous state spaces
+- The agent memory only relies on the Q-table
+- Performance rapidly decreases in stochastic environment due to randomness
+
+However we can still think of some improvements and extensions for the project, including :
+- Using a larger environment like the 8x8 grid
+- Implementing SARSA and comparing it to Q-learning 
+- Moving to function approximation (DQN) for larger environments
+
+## Contact
+
+If you have any questions, suggestions, or feedback about this project, feel free to reach out:
+
+- GitHub: https://github.com/Anirod310
+- Email: bousek.dorian@gmail.com
+
+I’m always open to discussing reinforcement learning, machine learning, or related topics.
