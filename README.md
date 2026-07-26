@@ -19,8 +19,8 @@ Below are the steps you can follow to test and run the project yourself:
 
 - Clone the repository :
     ```bash
-    git clone https://github.com/Anirod310frozenlake-qlearning.git
-    cd frozen-lake-rl
+    git clone https://github.com/Anirod310/frozenlake-qlearning.git
+    cd frozenlake-qlearning
     ```
 
 - This project relies on the Python libraries listed in the [requirements.txt](requirements.txt) file. Install all dependencies by running the following command in your environment:
