@@ -52,7 +52,6 @@ The project is organized as follows:
 │   ├── evaluate.py
 │   └── config.py
 │
-├── report.md           # Detailed step-by-step report
 ├── requirements.txt
 └── README.md
 ```
