@@ -13,8 +13,6 @@ The environment consists of a 4×4 frozen lake grid. The agent starts at positio
 
 These two parts allowed me to illustrate and understand the differences between a deterministic and a stochastic environment.   
 
-Feel free to take a look at the [report](report.md), where I documented my progress on the project step by step. 
-
 ## Getting Started 
 
 Below are the steps you can follow to test and run the project yourself:
