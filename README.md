@@ -1,7 +1,8 @@
 # Reinforcement Learning using Tabular Q-Learning on Frozen Lake
 
-
-![Frozen Lake](https://gymnasium.farama.org/_images/frozen_lake.gif)
+<p align="center">
+  <img src="https://gymnasium.farama.org/_images/frozen_lake.gif" alt="Frozen Lake" width="350"/>
+</p>
 
 This project allowed me to learn the fundamentals of reinforcement learning by implementing tabular Q-learning on the [Frozen Lake Environment](https://gymnasium.farama.org/environments/toy_text/frozen_lake/) using the Gymnasium library.
 
